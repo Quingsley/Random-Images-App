@@ -35,25 +35,34 @@ class ImageList extends StatelessWidget {
                 bottom: 8.0,
               ),
               child: Image.network(image.url)),
-          Row(
-            children: [
-              const Icon(
-                Icons.favorite,
-                color: Colors.red,
-                size: 17,
-              ),
-              Text(image.toString()),
-              Container(
-                margin: const EdgeInsets.all(8.0),
-              ),
-              Text(
-                image.link,
-                style: const TextStyle(
-                  color: Colors.blue,
-                  fontWeight: FontWeight.bold,
+          Center(
+            child: Row(
+              children: <Widget>[
+                const Icon(
+                  Icons.favorite,
+                  color: Colors.red,
+                  size: 20,
                 ),
-              ),
-            ],
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(image.toString()),
+                ),
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Text(
+                    image.username,
+                    style: const TextStyle(
+                      color: Colors.blue,
+                      fontWeight: FontWeight.bold,
+                    ),
+                  ),
+                ),
+                const Icon(
+                  Icons.verified_user_rounded,
+                  size: 20,
+                ),
+              ],
+            ),
           ),
         ],
       ),
